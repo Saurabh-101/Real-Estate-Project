@@ -1,13 +1,22 @@
 import React from 'react'
+import { BrowserRouter, Routes,Route } from 'react-router-dom';
+import Home from './pages/Home';
+import SingIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import About from './pages/About';
+import Profile from './pages/Profile';
 
 export default function App() {
   return (
-    <h1 className='text-red-700'>
-      HEllo 
-
-
-
-
-    </h1>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/sign-in' element={<SingIn/>}/>
+        <Route path='/sign-up' element={<SignUp />}/>
+        <Route path='/about' element={<About />}/>
+        <Route path='/profile' element={<Profile />}/>
+        
+      </Routes>
+    </BrowserRouter>
   )
 }
